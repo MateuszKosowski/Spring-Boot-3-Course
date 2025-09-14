@@ -1,4 +1,4 @@
-package com.kosowski.chapterTwo;
+package com.kosowski.util;
 
 public interface Coach {
     public String getDailyWorkout();

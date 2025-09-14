@@ -1,4 +1,4 @@
-package com.kosowski.chapterTwo;
+package com.kosowski.util;
 
 import org.springframework.stereotype.Component;
 
