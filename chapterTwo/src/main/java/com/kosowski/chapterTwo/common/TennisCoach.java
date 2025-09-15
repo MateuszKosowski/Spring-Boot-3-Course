@@ -1,9 +1,11 @@
 package com.kosowski.chapterTwo.common;
 
 import com.kosowski.util.Coach;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class TennisCoach implements Coach {
 
     @Override
