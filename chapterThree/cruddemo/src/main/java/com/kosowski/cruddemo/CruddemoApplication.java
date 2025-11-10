@@ -26,7 +26,8 @@ public class CruddemoApplication {
             // createStudent(studentDAO);
             //readStudent(studentDAO);
             //readAllStudents(studentDAO);
-            updateStudent(studentDAO);
+            //updateStudent(studentDAO);
+            deleteStudent(studentDAO);
         };
     }
 
@@ -64,5 +65,9 @@ public class CruddemoApplication {
         student.setLastName("Nawrocki");
         student.setEmail("nawrocki@wp.pl");
         studentDAO.update(student);
+    }
+
+    private void deleteStudent(StudentDAO studentDAO) {
+        studentDAO.delete(5);
     }
 }

@@ -52,5 +52,21 @@ public class StudnetDAOImplementation implements StudentDAO {
         query.setParameter("email", student.getEmail());
         query.setParameter("studentId", student.getId());
         query.executeUpdate();
+
+        // Other way to update:
+        // entityManager.merge(student);
     }
+
+    @Override
+    @Transactional
+    public void delete(int id){
+        Query query = entityManager.createQuery(
+                "DELETE FROM Student s WHERE s.id = :studentId");
+        query.setParameter("studentId", id);
+        query.executeUpdate();
+    }
+
+    // Other way to delete:
+    // Student theStudent = entityManager.find(Student.class, id);
+    // entityManager.remove(theStudent);
 }
