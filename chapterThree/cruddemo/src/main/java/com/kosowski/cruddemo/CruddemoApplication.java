@@ -25,7 +25,8 @@ public class CruddemoApplication {
         return runner -> {
             // createStudent(studentDAO);
             //readStudent(studentDAO);
-            readAllStudents(studentDAO);
+            //readAllStudents(studentDAO);
+            updateStudent(studentDAO);
         };
     }
 
@@ -57,4 +58,11 @@ public class CruddemoApplication {
         }
     }
 
+    private void updateStudent(StudentDAO studentDAO) {
+        Student student = studentDAO.findById(1);
+        student.setFirstName("Daniel");
+        student.setLastName("Nawrocki");
+        student.setEmail("nawrocki@wp.pl");
+        studentDAO.update(student);
+    }
 }
