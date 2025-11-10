@@ -24,7 +24,8 @@ public class CruddemoApplication {
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
         return runner -> {
             // createStudent(studentDAO);
-            readStudent(studentDAO);
+            //readStudent(studentDAO);
+            readAllStudents(studentDAO);
         };
     }
 
@@ -46,6 +47,14 @@ public class CruddemoApplication {
         Student student3 = new Student("Anna", "Kowalska", "kowalskaa@onet.pl");
         studentDAO.save(student3);
         System.out.println("Student saved successfully, ID: " + student3.getId() + "");
+    }
+
+    private void readAllStudents(StudentDAO studentDAO){
+        System.out.println("Getting all students from database");
+        var students = studentDAO.findAll("N");
+        for(var student: students){
+            System.out.println(student);
+        }
     }
 
 }
