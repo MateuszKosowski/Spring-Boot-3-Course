@@ -65,10 +65,12 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-		<!-- Spring Data REST -->
+		<!-- Spring Doc -->
+		<!-- Currently in Spring Boot 4.0.3, there is an issue between Spring Data Rest and Spring Doc, which causes the application to fail to start.  -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.5.0</version>
 		</dependency>
     </dependencies>
 
