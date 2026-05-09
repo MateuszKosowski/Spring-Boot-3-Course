@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Form Response</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+<p th:text="'Hello, your name is ' + ${name_model}" class="theClass"/>
+<!--
+If I skip @RequestParam in Controller and theModel.addAttribute("name_model", name)
+I can use syntax
+th:text="<p th:text="'Hello, your name is ' + ${param.name}"/>
+param.name is a Thymeleaf shortcut to HttpServletRequest.getParameter("name")
+-->
+</body>
+</html>
