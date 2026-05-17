@@ -8,7 +8,11 @@
 <body>
 <main>
    <h3>Student Confirmation</h3>
-    <p th:text="'Student: ' + ${student.firstName} + ' ' + ${student.lastName} + ' ' + ${student.country}"/>
+    <p th:text="'Student: ' + ${student.firstName} + ' ' + ${student.lastName} + ' from ' + ${student.country}"/>
+    <p th:text="'Language: ' + ${student.favLang}" /><p>Favorite Systems:</p>
+    <ul>
+        <li th:each="tempSys : ${student.favSystems}" th:text="${tempSys}"></li>
+    </ul>
 </main>
 </body>
 </html>
