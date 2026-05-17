@@ -20,10 +20,14 @@ public class StudentController {
     @Value("${list.of.countries}")
     private List<String> listOfCountries;
 
+    @Value("${list.of.languages}")
+    private List<String> listOfLanguages;
+
     @GetMapping("/")
     public String showForm(Model theModel){
         theModel.addAttribute("student", new Student());
         theModel.addAttribute("listOfCountries", listOfCountries);
+        theModel.addAttribute("listOfLanguages", listOfLanguages);
         return "student-form";
     }
 

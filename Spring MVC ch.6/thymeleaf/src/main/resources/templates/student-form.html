@@ -7,7 +7,7 @@
 </head>
 <body>
 <main>
-    <h3>Student Register Form</h3>
+    <h3>Complex Student Register Form</h3>
     <form th:action="@{/student/processStudentForm}" th:object="${student}" method="POST">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" th:field="*{firstName}" placeholder="Enter first name" required />
@@ -20,6 +20,12 @@
             <option th:each="tempCountry : ${listOfCountries}" th:value="${tempCountry}" th:text="${tempCountry}">Country</option>
         </select>
         <br>
+        <span>Favorite Language:</span>
+        <th:block th:each="tempLanguage : ${listOfLanguages}">
+            <input type="radio" th:field="*{favLang}" th:id="${tempLanguage}" th:value="${tempLanguage}" required />
+            <label th:for="${tempLanguage}" th:text="${tempLanguage}"></label>
+        </th:block>S
+        <br/>
         <input type="submit" value="Submit" />
     </form>
 </main>
